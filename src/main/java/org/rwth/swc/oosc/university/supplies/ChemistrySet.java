@@ -5,7 +5,7 @@ import org.rwth.swc.oosc.university.rooms.Room;
 
 import java.time.LocalDate;
 
-public class ChemistrySet {
+public class ChemistrySet extends Supply {
 
     public void bookResource(Room room, LocalDate date) {
         throw new RuntimeException("Chemistry sets can only be booked for Laboratories.");

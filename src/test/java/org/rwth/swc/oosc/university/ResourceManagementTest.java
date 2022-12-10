@@ -23,19 +23,19 @@ public class ResourceManagementTest {
 
     private static final LocalDate TEST_DATE = LocalDate.of(2022, 12, 24);
 
-//    @Test
-//    public void stage1() {
-//        assertHierarchy(Room.class, Laboratory.class, true);
-//        assertHierarchy(Room.class, LectureHall.class, true);
-//        assertHierarchy(Room.class, SeminarRoom.class, true);
-//        assertHierarchy(Resource.class, Room.class, false);
-//
-//        assertHierarchy(Supply.class, ChemistrySet.class, true);
-//        assertHierarchy(Supply.class, Notebook.class, true);
-//        assertHierarchy(Supply.class, RoomDivider.class, true);
-//        assertHierarchy(Supply.class, Tablet.class, true);
-//        assertHierarchy(Resource.class, Supply.class, false);
-//    }
+    @Test
+    public void stage1() {
+        assertHierarchy(Room.class, Laboratory.class, true);
+        assertHierarchy(Room.class, LectureHall.class, true);
+        assertHierarchy(Room.class, SeminarRoom.class, true);
+        assertHierarchy(Resource.class, Room.class, false);
+
+        assertHierarchy(Supply.class, ChemistrySet.class, true);
+        assertHierarchy(Supply.class, Notebook.class, true);
+        assertHierarchy(Supply.class, RoomDivider.class, true);
+        assertHierarchy(Supply.class, Tablet.class, true);
+        assertHierarchy(Resource.class, Supply.class, false);
+    }
 
 //    @Test
 //    public void stage2() {
@@ -71,7 +71,7 @@ public class ResourceManagementTest {
 //        assertEquals(20, freeResources.size());
 //
 //        /* HINT: This should not compile! */
-//        /* ResourcesHelper.getFreeResources(new ArrayList<Object>(), TEST_DATE); */
+////        ResourcesHelper.getFreeResources(new ArrayList<Object>(), TEST_DATE);
 //    }
 
     private void assertHierarchy(Class<?> A, Class<?> B, boolean instantiable) {

@@ -1,5 +1,5 @@
 package org.rwth.swc.oosc.university.supplies;
 
-public class Tablet {
+public class Tablet extends Supply {
 
 }
