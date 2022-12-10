@@ -1,4 +1,10 @@
 package org.rwth.swc.oosc.university.management;
-public class ResourcesHelper {
 
+import java.time.LocalDate;
+import java.util.Collection;
+
+public class ResourcesHelper {
+    public static <T extends Resource> Collection<T> getFreeResources(Collection<T> resource, LocalDate date) {
+       return resource;
+    }
 }

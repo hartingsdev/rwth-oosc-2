@@ -37,42 +37,42 @@ public class ResourceManagementTest {
         assertHierarchy(Resource.class, Supply.class, false);
     }
 
-//    @Test
-//    public void stage2() {
-//        Collection<Laboratory> laboratories = createResources(Laboratory.class);
-//        Collection<LectureHall> lectureHalls = createResources(LectureHall.class);
-//
-//        Collection<Laboratory> freeLaboratories = ResourcesHelper.getFreeResources(laboratories, TEST_DATE);
-//        assertEquals(10, freeLaboratories.size());
-//
-//        Collection<LectureHall> freeLectureHalls = ResourcesHelper.getFreeResources(lectureHalls, TEST_DATE);
-//        assertEquals(10, freeLectureHalls.size());
-//
-//        Collection<Room> rooms = Stream.concat(laboratories.stream(), lectureHalls.stream()).toList();
-//        Collection<Room> freeRooms = ResourcesHelper.getFreeResources(rooms, TEST_DATE);
-//        assertEquals(20, freeRooms.size());
-//
-//
-//        Collection<ChemistrySet> chemistrySets = createResources(ChemistrySet.class);
-//        Collection<Tablet> tablets = createResources(Tablet.class);
-//
-//        Collection<ChemistrySet> freeChemistrySets = ResourcesHelper.getFreeResources(chemistrySets, TEST_DATE);
-//        assertEquals(10, freeChemistrySets.size());
-//
-//        Collection<Tablet> freeTablets = ResourcesHelper.getFreeResources(tablets, TEST_DATE);
-//        assertEquals(10, freeTablets.size());
-//
-//        Collection<Supply> supplies = Stream.concat(chemistrySets.stream(), tablets.stream()).toList();
-//        Collection<Supply> freeSupplies = ResourcesHelper.getFreeResources(supplies, TEST_DATE);
-//        assertEquals(20, freeSupplies.size());
-//
-//        Collection<Resource> resources = Stream.concat(laboratories.stream(), chemistrySets.stream()).toList();
-//        Collection<Resource> freeResources = ResourcesHelper.getFreeResources(resources, TEST_DATE);
-//        assertEquals(20, freeResources.size());
-//
-//        /* HINT: This should not compile! */
-////        ResourcesHelper.getFreeResources(new ArrayList<Object>(), TEST_DATE);
-//    }
+    @Test
+    public void stage2() {
+        Collection<Laboratory> laboratories = createResources(Laboratory.class);
+        Collection<LectureHall> lectureHalls = createResources(LectureHall.class);
+
+        Collection<Laboratory> freeLaboratories = ResourcesHelper.getFreeResources(laboratories, TEST_DATE);
+        assertEquals(10, freeLaboratories.size());
+
+        Collection<LectureHall> freeLectureHalls = ResourcesHelper.getFreeResources(lectureHalls, TEST_DATE);
+        assertEquals(10, freeLectureHalls.size());
+
+        Collection<Room> rooms = Stream.concat(laboratories.stream(), lectureHalls.stream()).toList();
+        Collection<Room> freeRooms = ResourcesHelper.getFreeResources(rooms, TEST_DATE);
+        assertEquals(20, freeRooms.size());
+
+
+        Collection<ChemistrySet> chemistrySets = createResources(ChemistrySet.class);
+        Collection<Tablet> tablets = createResources(Tablet.class);
+
+        Collection<ChemistrySet> freeChemistrySets = ResourcesHelper.getFreeResources(chemistrySets, TEST_DATE);
+        assertEquals(10, freeChemistrySets.size());
+
+        Collection<Tablet> freeTablets = ResourcesHelper.getFreeResources(tablets, TEST_DATE);
+        assertEquals(10, freeTablets.size());
+
+        Collection<Supply> supplies = Stream.concat(chemistrySets.stream(), tablets.stream()).toList();
+        Collection<Supply> freeSupplies = ResourcesHelper.getFreeResources(supplies, TEST_DATE);
+        assertEquals(20, freeSupplies.size());
+
+        Collection<Resource> resources = Stream.concat(laboratories.stream(), chemistrySets.stream()).toList();
+        Collection<Resource> freeResources = ResourcesHelper.getFreeResources(resources, TEST_DATE);
+        assertEquals(20, freeResources.size());
+
+        /* HINT: This should not compile! */
+//        ResourcesHelper.getFreeResources(new ArrayList<Object>(), TEST_DATE);
+    }
 
     private void assertHierarchy(Class<?> A, Class<?> B, boolean instantiable) {
         assertTrue(A.isAssignableFrom(B), "Error in your inheritance hierarchy.");
