@@ -16,8 +16,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ResourceManagementTest {
 
@@ -72,6 +71,22 @@ public class ResourceManagementTest {
 
         /* HINT: This should not compile! */
 //        ResourcesHelper.getFreeResources(new ArrayList<Object>(), TEST_DATE);
+    }
+
+    @Test
+    public void stage3() {
+        Laboratory lab = new Laboratory();
+        LectureHall hall = new LectureHall();
+
+        List<Room> rooms = new ArrayList<>();
+        rooms.add(lab);
+        rooms.add(hall);
+
+        ChemistrySet chemistrySet = createResource(ChemistrySet.class);
+
+        assertDoesNotThrow(() -> chemistrySet.bookResource(lab, TEST_DATE));
+        assertThrows(RuntimeException.class, () -> chemistrySet.bookResource(rooms.get(1), TEST_DATE));
+        assertDoesNotThrow(() -> chemistrySet.bookResource(rooms.get(0), TEST_DATE)); // fails
     }
 
     private void assertHierarchy(Class<?> A, Class<?> B, boolean instantiable) {
